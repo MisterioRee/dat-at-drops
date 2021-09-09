@@ -4,23 +4,32 @@
   "description": "a day at drops",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MisterioRee/dat-at-drops.git"
   },
   "keywords": [
-    "a",
-    "normal",
-    "day",
-    "at",
-    "drops"
+    "a normal day at drops"
   ],
   "author": "Muhammad Rehan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MisterioRee/dat-at-drops/issues"
   },
-  "homepage": "https://github.com/MisterioRee/dat-at-drops#readme"
+  "homepage": "https://github.com/MisterioRee/dat-at-drops#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.9.0",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
 }
