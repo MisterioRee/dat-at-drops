@@ -1,0 +1,26 @@
+{
+  "name": "drops",
+  "version": "1.0.0",
+  "description": "a day at drops",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisterioRee/dat-at-drops.git"
+  },
+  "keywords": [
+    "a",
+    "normal",
+    "day",
+    "at",
+    "drops"
+  ],
+  "author": "Muhammad Rehan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MisterioRee/dat-at-drops/issues"
+  },
+  "homepage": "https://github.com/MisterioRee/dat-at-drops#readme"
+}
