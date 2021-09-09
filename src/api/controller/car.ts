@@ -10,30 +10,37 @@
 import { Request, Response, NextFunction } from "express";
 import Car from "../model/car";
 
-import { join } from "path";
-const file = join(__dirname, "../assets/cars.json");
+// import carsset from "../../assets/cars.json";
+import { mongClient } from "../providers/database";
 
 // get list of employees from database
 export async function getCars(req: Request, res: Response, next: NextFunction) {
   //read from Database
-  const users = await Car.find()
-    .exec()
-    .then((_car) => {
-      res.status(500).json({
-        data: _car,
+  console.log("Fetching Cars..!!");
+
+  mongClient.connect(async () => {
+    console.log("Connecting DB..!!");
+    await Car.find()
+      .exec()
+      .then((_cars) => {
+        console.log("Cars ");
+        res.status(200).json({
+          data: _cars,
+        });
+      })
+      .catch((err) => {
+        console.log("Err ");
+
+        res.status(500).json({
+          error: err,
+        });
       });
-    })
-    .catch((err) => {
-      res.status(500).json({
-        error: err,
-      });
-    });
-  //response to client
-  return res.status(200).json({
-    employees: users,
+
+    // mongClient.close();
   });
 }
 
+//get
 export function getCarsbyModel(
   req: Request,
   res: Response,
@@ -43,7 +50,7 @@ export function getCarsbyModel(
 
   //response to client
   return res.status(200).json({
-    employees: file,
+    data: "getCarsbyModel",
   });
 }
 export function getCarsbyCylinders(
@@ -55,6 +62,6 @@ export function getCarsbyCylinders(
 
   //response to client
   return res.status(200).json({
-    employees: file,
+    data: "getCarsbyCylinders",
   });
 }
