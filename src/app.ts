@@ -16,20 +16,6 @@ import express, {
 } from "express";
 import Log from "./api/middleware/log";
 
-const { MongoClient } = require("mongodb");
-const uri =
-  "mongodb+srv://admin:[]@node-ecom-cluster.jmrtf.mongodb.net/drops?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-client.connect(() => {
-  const collection = client.db("drops").collection("cars");
-  // perform actions on the collection object
-  // client.close();
-});
-
 //import sub-routers
 import carsRouter from "./api/routes/car";
 

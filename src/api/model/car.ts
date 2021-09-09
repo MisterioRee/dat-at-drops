@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
-interface ICar {
+interface ICar extends Document {
   Id: number;
   mpg?: number;
   cylinders?: number;

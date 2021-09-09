@@ -9,5 +9,3 @@
  * copy this code and modify as your own need, you are free to
  * use this code as your own.
  */
-
-export interface ICar {}
